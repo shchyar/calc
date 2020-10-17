@@ -1,0 +1,31 @@
+.place{
+    
+    width: 200px;
+    margin: 0 auto;
+    
+    
+}
+.string{
+    width: 95%;
+}
+.countdown{
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.inputs{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button{
+    width: 55px;
+    height: 30px;
+    text-align: center;
+
+}
+.math{
+    text-align: center;
+}
