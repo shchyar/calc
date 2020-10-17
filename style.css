@@ -1,31 +1,68 @@
 .place{
     
-    width: 200px;
     margin: 0 auto;
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     
 }
 .string{
+
     width: 95%;
+
+}
+.header_calc{
+
+    display: flex;
+
 }
 .countdown{
     
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+
 }
 .inputs{
     
     display: flex;
     flex-direction: column;
     align-items: center;
-}
 
+}
 .button{
-    width: 55px;
-    height: 30px;
+
+    font-size: large;
+    width: 80px;
+    height: 50px;
     text-align: center;
+    border: grey solid 1.5px;
 
 }
 .math{
+
+    display: flex;
+    flex-direction: column;
     text-align: center;
+
 }
+.flex_place{
+
+    display: flex;
+
+}
+.head {
+
+    width: 160px;
+
+}
+form{
+
+    max-width: 100%;
+
+}
+input {
+    width: 312px;
+    height: 60px;
+    border: grey solid 2px;
+    font-size: 20px;
+    text-align: right;
