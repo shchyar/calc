@@ -4,40 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel = "stylesheet" type="text/css" href = "style.css">
+    <link rel = "stylesheet" type="text/css" href = "style.css">   
 </head>
+
 <body>
     <div class = "place">
         <form name = "form">
             <input type = "text" name = "textview" readonly>
+            <input type="button" name = "journal" value="journal" class = "button journ" onclick ="journalArr()">
         </form>
-        <div class = "header_calc">
-            <input type ="button" class = "button head" value="C" onclick = "clearResult()">
-            <input type ="button" class = "button head" value="<=" onclick = "arrow()">
-        </div>
-    <div class = "flex_place">
-            <div class = "inputs">
-                <div class = "countdown">
-                    <input type ="button" class = "button"  value="1" onclick="insert('1')">
-                    <input type ="button" class = "button"  value="2" onclick="insert('2')">
-                    <input type ="button" class = "button"  value="3" onclick="insert('3')">
-                    <input type ="button" class = "button"  value="4" onclick="insert('4')">
-                    <input type ="button" class = "button"  value="5" onclick="insert('5')">
-                    <input type ="button" class = "button"  value="6" onclick="insert('6')">
-                    <input type ="button" class = "button"  value="7" onclick="insert('7')">
-                    <input type ="button" class = "button"  value="8" onclick="insert('8')">
-                    <input type ="button" class = "button"  value="9" onclick="insert('9')">
-                    <input type ="button" class = "button" value="0" onclick="insert('0')">
-                    <input type ="button" class = "button" value="=" onclick = "result()">
-                    <input type ="button" class = "button" value="." onclick="insert('.')">
-                </div>  
-             </div>
-        <div class = "math">
-            <input type ="button" class = "button" value="+" onclick= "insert('+')">
-            <input type ="button" class = "button" value="-" onclick = "insert('-')">
-            <input type ="button" class = "button" value="*" onclick = "insert('*')">
-            <input type ="button" class = "button" value="/" onclick = "insert('/')" >   
-        </div>
+        <div id = console>
+            <div class = "header_calc">
+                <input type ="button" class = "button head" value="C" onclick = "clearResult()">
+                <input type ="button" class = "button head" value="<=" onclick = "arrow()">
+            </div>
+            <div class = "flex_place">
+                <div class = "inputs">
+                    <div class = "countdown">
+                        <input type ="button" class = "button"  value="1" onclick="insert('1')">
+                        <input type ="button" class = "button"  value="2" onclick="insert('2')">
+                        <input type ="button" class = "button"  value="3" onclick="insert('3')">
+                        <input type ="button" class = "button"  value="4" onclick="insert('4')">
+                        <input type ="button" class = "button"  value="5" onclick="insert('5')">
+                        <input type ="button" class = "button"  value="6" onclick="insert('6')">
+                        <input type ="button" class = "button"  value="7" onclick="insert('7')">
+                        <input type ="button" class = "button"  value="8" onclick="insert('8')">
+                        <input type ="button" class = "button"  value="9" onclick="insert('9')">
+                        <input type ="button" class = "button" value="0" onclick="insert('0')">
+                        <input type ="button" class = "button" value="=" onclick = "result()">
+                        <input type ="button" class = "button" value="." onclick="insert('.')">
+                    </div>  
+                </div>
+            <div class = "math">
+                <input type ="button" class = "button" value="+" onclick= "insert('+')">
+                <input type ="button" class = "button" value="-" onclick = "insert('-')">
+                <input type ="button" class = "button" value="*" onclick = "insert('*')">
+                <input type ="button" class = "button" value="/" onclick = "insert('/')" >   
+            </div>
+            </div>   
     </div>
 </div>
 
