@@ -1,22 +1,21 @@
 let journal = [];
-let div = document.createElement('div');
-div.classList.add('hidden');
-document.body.append(div);
 let hidCons = document.getElementById('console');
-div.hidden = true;
+hidCons.insertAdjacentHTML("afterend",`<div id = "hidden"></div>`);
+let hidJournal = document.getElementById('hidden');
 hidCons.hidden = false;
-
+hidJournal.hidden = true;
 
 
 const journalArr = () => {
 
-    div.innerHTML = (journal.join('<br>'));
-      if(div.hidden == true && hidCons.hidden == false){
-          div.hidden = false;
-          hidCons.hidden = true;
+    hidJournal.innerHTML = (journal.join('<br>'));
+    journal.length = 9;
+    if(hidJournal.hidden == true && hidCons.hidden == false){
+        hidJournal.hidden = false;
+        hidCons.hidden = true;
       } 
       else{
-        div.hidden = true;
+        hidJournal.hidden = true;
         hidCons.hidden = false;
       }
   
@@ -29,11 +28,14 @@ const insert = (num) => {
 };
 
 const result = () => {
-  
+    let date = new Date();
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let seconds = date.getSeconds();
     let res = document.form.textview.value;
         if(res) {
             document.form.textview.value = eval(res);
-            journal.push(`${res} =  ${document.form.textview.value}`)
+            journal.unshift(`(${hours} : ${minutes} : ${seconds}) ${res} =  ${document.form.textview.value}`)
           
   };
 
