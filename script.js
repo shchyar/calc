@@ -9,10 +9,6 @@ hidJournal.hidden = true;
 
 const journalArr = () => {
 
-    hidJournal.innerHTML = (journal.join('<br>'));
-    if(journal.length > 9){
-        journal.pop();
-    }
     if(hidJournal.hidden == true && hidCons.hidden == false){
         hidJournal.hidden = false;
         hidCons.hidden = true;
@@ -31,6 +27,7 @@ const insert = (num) => {
 };
 
 const result = () => {
+    
     let date = new Date();
     let hours = date.getHours();
     let minutes = date.getMinutes();
@@ -38,7 +35,11 @@ const result = () => {
     let res = document.form.textview.value;
         if(res) {
             document.form.textview.value = eval(res);
-            journal.unshift(`(${hours} : ${minutes} : ${seconds}) ${res} =  ${document.form.textview.value}`)
+            journal.unshift(`(${hours} : ${minutes} : ${seconds}) ${res} =  ${document.form.textview.value}`);
+            hidJournal.innerHTML = (journal.join('<br>'));
+                if(journal.length > 9){
+                    journal.pop();
+                }
           
   };
 
@@ -58,7 +59,7 @@ const arrow = () => {
  }
  
  const checkBtn = (key) => {
-    return (key >= '0' && key <= '9') || key == '+' || key == '-' || key == '*' 
+    return (key >= 0 && key <= 9) || key == '+' || key == '-' || key == '*' 
     || key == '/'  || key == '.' || key == 'Backspace' ;
     
   }
