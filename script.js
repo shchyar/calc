@@ -6,10 +6,13 @@ hidCons.hidden = false;
 hidJournal.hidden = true;
 
 
+
 const journalArr = () => {
 
     hidJournal.innerHTML = (journal.join('<br>'));
-    journal.length = 9;
+    if(journal.length > 9){
+        journal.pop();
+    }
     if(hidJournal.hidden == true && hidCons.hidden == false){
         hidJournal.hidden = false;
         hidCons.hidden = true;
@@ -53,4 +56,11 @@ const arrow = () => {
     document.form.textview.value = res.substring(0,res.length-1);
     
  }
+ 
+ const checkBtn = (key) => {
+    return (key >= '0' && key <= '9') || key == '+' || key == '-' || key == '*' 
+    || key == '/'  || key == '.' || key == 'Backspace' ;
+    
+  }
 
+  

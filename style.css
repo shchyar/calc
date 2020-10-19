@@ -63,7 +63,8 @@
 
 }
 form{
-
+    display: flex;
+    justify-content: baseline;
     max-width: 100%;
     
 }
@@ -76,7 +77,7 @@ input {
     font-family: "digital";
 }
 .journ{
-    height: 63px;
+    height: 100%;
 }   
     
 
@@ -96,8 +97,11 @@ input {
     background-color: #eff0f0;
     font-size: 20px;
     text-align: right;
+    overflow-x: hidden;
     
 }
 .lcd{
     background-color: greenyellow;
+    font-size: 45px;
+   
 }
