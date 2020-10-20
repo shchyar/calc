@@ -18,6 +18,9 @@
     width: 95%;
 
 }
+.string:focus{
+    border: grey solid 1.5px;
+}
 .header_calc{
 
     display: flex;
@@ -45,6 +48,7 @@
     border: grey solid 1.5px;
 
 }
+
 .math{
 
     display: flex;

@@ -10,7 +10,7 @@
 <body>
     <div class = "place">
         <form name = "form">
-            <input onkeydown="return checkBtn(event.key)" type = "text" class = "lcd" name = "textview" >
+            <input onkeydown="return checkBtn(event.key)" type = "text" class = "lcd" id = 'lcd' name = "textview" >
             <input type="button" name = "journal" value="journal" class = "button journ" onclick ="journalArr()">
         </form>
         <div id = console>
@@ -31,7 +31,7 @@
                         <input type ="button" class = "button"  value="8" onclick="insert('8')">
                         <input type ="button" class = "button"  value="9" onclick="insert('9')">
                         <input type ="button" class = "button"  value="0" onclick="insert('0')">
-                        <input type ="button" class = "button"  value="=" onclick = "result()">
+                        <input type ="button" class = "button" id = "enter"  value="=" onclick = "result()">
                         <input type ="button" class = "button"  value="." onclick="insert('.')">
                     </div>  
                 </div>

@@ -5,7 +5,23 @@ let hidJournal = document.getElementById('hidden');
 hidCons.hidden = false;
 hidJournal.hidden = true;
 
-
+document.addEventListener("keydown", function(event){
+    
+    if(event.key == "Enter" || event.key == '='){
+        enter.focus();
+        result();
+    }
+    else if((event.key >= 0 && event.key <=9) || event.key == 'Backspace' || event.key == '+' || event.key == '-' || 
+    event.key == '*' || event.key == '/'){
+        lcd.focus();
+    }
+    else if(event.key == 'Delete'){
+        clearResult();
+    }
+    else{
+        document.focus();
+    }
+});
 
 const journalArr = () => {
 
@@ -37,12 +53,10 @@ const result = () => {
         document.form.textview.value = eval(res);
         journal.unshift(`(${hours} : ${minutes} : ${seconds}) ${res} =  ${document.form.textview.value}`);
         hidJournal.innerHTML = (journal.join('<br>'));
-            if(journal.length > 9){
+        if(journal.length > 9){
                 journal.pop();
-            }
-          
-  };
-
+        };     
+    };
 };
 
 const clearResult = () => {
