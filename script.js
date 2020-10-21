@@ -4,6 +4,7 @@ hidCons.insertAdjacentHTML("afterend",`<div id = "hidden"></div>`);
 let hidJournal = document.getElementById('hidden');
 hidCons.hidden = false;
 hidJournal.hidden = true;
+let controlCount = 0;
 
 document.addEventListener("keydown", function(event){
     
@@ -17,6 +18,15 @@ document.addEventListener("keydown", function(event){
     }
     else if(event.key == 'Delete'){
         clearResult();
+    }
+    else if(event.key == 'Control'){
+        controlCount +=1;
+        if(controlCount == 2){
+
+        journalArr();
+        controlCount = 0;
+        
+        }
     }
     else{
         document.focus();
