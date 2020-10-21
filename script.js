@@ -87,6 +87,7 @@ const result = () => {
     catch(e){
 
         document.form.textview.value = ('ERROR');
+        setTimeout(() => document.form.textview.value = "", 500);
     };
         journal.unshift(`(${hours} : ${minutes} : ${seconds}) ${res} =  ${document.form.textview.value}`);
         hidJournal.innerHTML = (journal.join('<br>'));
