@@ -11,35 +11,35 @@
     <div class = "place">
         <form name = "form">
             <input onkeydown="return checkBtn(event.key)" type = "text" class = "lcd" id = 'lcd' name = "textview" >
-            <input type="button" name = "journal" value="journal" class = "button journ" onclick ="journalArr()">
+            <input type="button" name = "journal" value="journal" class = "button journ" id = "Control" onclick ="journalArr()">
         </form>
         <div id = console>
             <div class = "header_calc">
-                <input type ="button" class = "button head" value="C" onclick = "clearResult()">
-                <input type ="button" class = "button head" value="<=" onclick = "arrow()">
+                <input type ="button" class = "button head" value="C" id = "Delete" onclick = "clearResult()">
+                <input type ="button" class = "button head" value="<=" id = "Backspace" onclick = "arrow()">
             </div>
             <div class = "flex_place">
                 <div class = "inputs">
                     <div class = "countdown">
-                        <input type ="button" class = "button"  value="1" onclick="insert('1')">
-                        <input type ="button" class = "button"  value="2" onclick="insert('2')">
-                        <input type ="button" class = "button"  value="3" onclick="insert('3')">
-                        <input type ="button" class = "button"  value="4" onclick="insert('4')">
-                        <input type ="button" class = "button"  value="5" onclick="insert('5')">
-                        <input type ="button" class = "button"  value="6" onclick="insert('6')">
-                        <input type ="button" class = "button"  value="7" onclick="insert('7')">
-                        <input type ="button" class = "button"  value="8" onclick="insert('8')">
-                        <input type ="button" class = "button"  value="9" onclick="insert('9')">
-                        <input type ="button" class = "button"  value="0" onclick="insert('0')">
-                        <input type ="button" class = "button" id = "enter"  value="=" onclick = "result()">
-                        <input type ="button" class = "button"  value="." onclick="insert('.')">
+                        <input type ="button" class = "button"  value="1" id = "1" onclick="insert('1')">
+                        <input type ="button" class = "button"  value="2" id = "2" onclick="insert('2')">
+                        <input type ="button" class = "button"  value="3" id = "3" onclick="insert('3')">
+                        <input type ="button" class = "button"  value="4" id = "4" onclick="insert('4')">
+                        <input type ="button" class = "button"  value="5" id = "5" onclick="insert('5')">
+                        <input type ="button" class = "button"  value="6" id = "6" onclick="insert('6')">
+                        <input type ="button" class = "button"  value="7" id = "7" onclick="insert('7')">
+                        <input type ="button" class = "button"  value="8" id = "8" onclick="insert('8')">
+                        <input type ="button" class = "button"  value="9" id = "9" onclick="insert('9')">
+                        <input type ="button" class = "button"  value="0" id = "0" onclick="insert('0')">
+                        <input type ="button" class = "button" id = "Enter"  value="=" onclick = "result()">
+                        <input type ="button" class = "button"  value="." id = "." onclick="insert('.')">
                     </div>  
                 </div>
             <div class = "math">
-                <input type ="button" class = "button" value="+" onclick= "insert('+')">
-                <input type ="button" class = "button" value="-" onclick = "insert('-')">
-                <input type ="button" class = "button" value="*" onclick = "insert('*')">
-                <input type ="button" class = "button" value="/" onclick = "insert('/')" >   
+                <input type ="button" class = "button" value="+" id = "+" onclick= "insert('+')">
+                <input type ="button" class = "button" value="-" id = "-" onclick = "insert('-')">
+                <input type ="button" class = "button" value="*" id = "*" onclick = "insert('*')">
+                <input type ="button" class = "button" value="/"id = "/" onclick = "insert('/')" >   
             </div>
             </div>   
     </div>

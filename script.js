@@ -6,32 +6,50 @@ hidCons.hidden = false;
 hidJournal.hidden = true;
 let controlCount = 0;
 
+
+
 document.addEventListener("keydown", function(event){
+    function light() { 
+        let id =(event.key);
+        let but = document.getElementById(id);
+        but.style.backgroundColor = "silver";
+        setTimeout(() => but.style = "", 100);
+    };
     
-    if(event.key == "Enter" || event.key == '='){
-        enter.focus();
-        result();
+    
+    if(event.key == "Enter"){
+        light();
+        Enter.focus();
+        result(); 
+           
     }
+
     else if((event.key >= 0 && event.key <=9) || event.key == 'Backspace' || event.key == '+' || event.key == '-' || 
-    event.key == '*' || event.key == '/'){
+    event.key == '*' || event.key == '/' || event.key == '.'){
         lcd.focus();
+        light();
     }
+
     else if(event.key == 'Delete'){
         clearResult();
+        light();
     }
+
     else if(event.key == 'Control'){
         controlCount +=1;
         if(controlCount == 1){
             let timer = setTimeout(clearTimer,750)
         }
+
         else if(controlCount == 2){
         journalArr();
         controlCount = 0;
-        }
+        };
     }
+
     else{
         document.focus();
-    }
+    };
 });
 
 const journalArr = () => {
@@ -39,13 +57,14 @@ const journalArr = () => {
     if(hidJournal.hidden == true && hidCons.hidden == false){
         hidJournal.hidden = false;
         hidCons.hidden = true;
-      } 
-      else{
+    }
+
+    else{
+
         hidJournal.hidden = true;
         hidCons.hidden = false;
-      }
-  
-}
+    };  
+};
 
 const insert = (num) => {
 
@@ -64,13 +83,16 @@ const result = () => {
         try{
         document.form.textview.value = eval(res);
     }
+
     catch(e){
+
         document.form.textview.value = ('ERROR');
-    }
+    };
         journal.unshift(`(${hours} : ${minutes} : ${seconds}) ${res} =  ${document.form.textview.value}`);
         hidJournal.innerHTML = (journal.join('<br>'));
         if(journal.length > 9){
-                journal.pop();
+
+            journal.pop();
         };     
     };
 };
@@ -79,24 +101,24 @@ const clearResult = () => {
 
     document.form.textview.value = "";
 
- }
+ };
 
 const arrow = () => {
 
     let res = document.form.textview.value;
     document.form.textview.value = res.substring(0,res.length-1);
     
- }
+ };
  
  const checkBtn = (key) => {
     return (key >= 0 && key <= 9) || key == '+' || key == '-' || key == '*' 
     || key == '/'  || key == '.' || key == 'Backspace' ||
     key == 'ArrowLeft' || key == 'ArrowRight' ;
     
-  }
+  };
   
   const clearTimer = () => {
       controlCount = 0;
-  }
+  };
 
   
