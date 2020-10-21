@@ -21,11 +21,12 @@ document.addEventListener("keydown", function(event){
     }
     else if(event.key == 'Control'){
         controlCount +=1;
-        if(controlCount == 2){
-
+        if(controlCount == 1){
+            let timer = setTimeout(clearTimer,750)
+        }
+        else if(controlCount == 2){
         journalArr();
         controlCount = 0;
-        
         }
     }
     else{
@@ -60,7 +61,12 @@ const result = () => {
     let seconds = date.getSeconds();
     let res = document.form.textview.value;
     if(res) {
+        try{
         document.form.textview.value = eval(res);
+    }
+    catch(e){
+        document.form.textview.value = ('ERROR');
+    }
         journal.unshift(`(${hours} : ${minutes} : ${seconds}) ${res} =  ${document.form.textview.value}`);
         hidJournal.innerHTML = (journal.join('<br>'));
         if(journal.length > 9){
@@ -87,6 +93,10 @@ const arrow = () => {
     || key == '/'  || key == '.' || key == 'Backspace' ||
     key == 'ArrowLeft' || key == 'ArrowRight' ;
     
+  }
+  
+  const clearTimer = () => {
+      controlCount = 0;
   }
 
   
