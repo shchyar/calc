@@ -1,4 +1,4 @@
-let journal = [];;
+let journal = [];
 let hidCons = document.getElementById('console');
 hidCons.insertAdjacentHTML("afterend", `<div id = "hidden"></div>`);
 let hidJournal = document.getElementById('hidden');
