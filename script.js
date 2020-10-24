@@ -64,6 +64,19 @@ const insert = (num) => {
 
 };
 
+const power = () => {
+    //document.form.textview.value = ('POWER');
+    let res = document.form.textview.value;
+    document.form.textview.value = (res+ ' '  + '** ' );
+    let input = document.querySelector("input");
+    input.focus();
+    input.selectionStart = input.value.length;
+};
+
+const sqrt = () => {
+    document.form.textview.value = ('SQRT');
+};
+
 const result = () => {
 
     let date = new Date();
