@@ -5,7 +5,12 @@ let hidJournal = document.getElementById('hidden');
 hidCons.hidden = false;
 hidJournal.hidden = true;
 let controlCount = 0;
+let inPower = false;
+let inSqrt = false;
+let powInput = [];
+
 let sesStor = sessionStorage.getItem('memory');
+
 
 if (journal == 0 && sesStor !== null) {
     journal = sesStor.split('  ');
@@ -64,7 +69,44 @@ const insert = (num) => {
 
 };
 
+const power = () => {
+    inPower = true;
+    //document.form.textview.value = ('POWER');
+    let res = document.form.textview.value;
+    try{
+        let rEval = eval(res);
+    } catch (e) {
+        document.form.textview.value = ('ERROR');
+        setTimeout(() => document.form.textview.value = "", 500);
+    };
+
+    document.form.textview.value = ('power ' + eval(res) + ',' );
+    let input = document.querySelector("input");
+    input.focus();
+    input.selectionStart = input.value.length;
+    document.addEventListener("keydown", function(event){
+        
+        if (event.key >= 0 && event.key <= 9){
+        powInput.push(event.key);
+        
+       
+        console.log(powInput);
+     }});
+    
+    
+};  
+
+const sqrt = () => {
+    document.form.textview.value = ('SQRT');
+};
+
 const result = () => {
+    if(inPower == true){
+        let resPower = rEval ** powInput.join('');
+        document.form.textview.value = resPower;
+        
+        inPower = false;
+    };
 
     let date = new Date();
     let hours = date.getHours();
